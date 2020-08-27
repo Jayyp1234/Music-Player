@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Overlay</title>
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link href="assets/css/design.css" rel="stylesheet">
+</head>
+<body>
+    <nav style="color: white;" style="z-index: 9999">
+        <a href="index.html"> <h3 style="color: var(--purple--);">I MUSIC</h3> </a>
+        <div style="margin-bottom: none;">
+          <i class="icon-search" style="position: absolute;margin-top: 14px;margin-left: 5px;color: black"></i>
+          <input type="text" name="client_search" placeholder="Search music">
+        </div>
+          <a href="index.html" class="nav-link"><p>Home</p></a>
+          <a href="explore.html" class="nav-link"><p>Explore</p></a>
+          <a href="overlay.html" class="nav-link"><p>Library</p></a>
+        </div>  
+    </nav>
+    <header>
+    
+    </header>
+   <section class="audio-player" song="assets/music/02. 80's Films.mp3" style="color: white;">
+                <i class="icon-playlist_play" ></i>
+                <img src="assets/images/images.jpeg" width="45px" height="45px;">
+                <div style="display: grid;color: white;font-size: 80%;">
+                    <b class="song-title"> Jon Belion</b>
+                    <span class="song-author">80's Films</span>
+                </div>
+                <div class="audio-timer">
+                    <span class="timers">0:00</span>
+                        <div class="progress-bar">
+                             <span class="progress"></span>
+                        </div>
+                    <span class="timers">0.00</span>
+                </div>
+                <div class="audio-controls">
+                    <i class="icon-skip_previous"></i> <!--icon-pause2--> 
+                    <i class="icon-play_arrow play" style="color: white;"></i> 
+                    <i class="icon-pause2" style="display: none;"> </i>
+                    <i class="icon-skip_next"></i> 
+                </div>
+                <div class="audio-controls2">
+                    <i class="icon-volume_up"></i>
+                    <i class="icon-repeat2"></i> 
+                    <i class="icon-shuffle"></i> 
+                </div>
+            </section>
+
+</body>
+<script type="text/javascript" src="assets/js/demo.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        });
+    $("header").not("nav").on("click" , function(){
+                alert("Coming Soon");
+            });
+    $(".Top-rated-songs-container ul li").click(function(){
+        audio.stop();
+        var song = $(this).attr("song");
+        var cover = $(this).attr("cover");
+        var artist = $(this).attr("artist");
+        var songTitle = $(this).attr("songTitle");
+        $(".audio-player b").html(artist);
+        $(".audio-player .song-author").html(songTitle);
+        $(".audio-player img").attr("src" , cover);
+        $(".audio-player").attr("song" , song);
+        audio = new Audio(song);
+            if(!audio.currentTime){
+                $(".audio-timer .timers").html("0.00");
+            }
+        
+
+    });
+    $(".audio-player .icon-play_arrow").click(function(){
+        $(this).hide();
+        $(this).siblings(".icon-pause2").show();
+        var song = $(".audio-player").attr("song");
+        //audio create list
+        audio = new Audio(song);
+        audio.play();
+        showDuration();
+
+        return audio;
+        
+
+    });
+    function showDuration(){
+        $(audio).bind("timeupdate", function(){
+            var s = parseInt(audio.currentTime % 60);
+            var m = parseInt((audio.currentTime) / 60) % 60;
+            if(s< 10){
+                s = "0" + s;
+            }
+            $(".timers").html(m + ":" + s);
+            var value = 0;
+            if(audio.currentTime > 0){
+                value = Math.floor((100/audio.duration) * audio.currentTime);
+            }
+            $(".progress").css("width" , value+"%");
+        });
+        return showDuration;
+    }
+    $(".audio-player .icon-pause2").click(function(){
+        $(this).hide();
+        $(this).siblings(".icon-play_arrow").show();
+        //audio create list
+        audio.pause();
+    });
+       
+
+</script>
+</html>

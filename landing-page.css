@@ -1,0 +1,153 @@
+html{
+    width: 100%;
+}
+body{
+    font-family: Roboto;
+    font-size: 15px;
+    line-height: 30px;
+    width: 100%;
+    color: white;
+    background-color: black;
+}
+div{
+    width: 100%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: row;
+}
+img{
+    width: 100%;
+}
+span{
+    width: 18%;
+    margin: 0% 2%;
+}
+input{
+    font-family:Roboto, 'Font Awesome 5 Free' ;
+    background-color: rgb(255, 255, 255,0.7);
+    border-color:rgb(255, 255, 255,0.7) ;
+    width: 35%;
+    border-radius: 10px;
+    color: white;
+}
+p{
+    text-align: center;
+}
+
+h1{
+    color: #7E41FE;
+}
+button{
+    background-color: #311C52;
+    border-radius: 10px;
+    border: thin solid #311C52;
+    color: white;
+    /* padding: 10px 20px; */
+}
+.header ,h1{
+    font-size: 20px;
+    width: 7%;
+    margin: 5% 3%;
+}
+.three{
+    width: 20%;
+}
+a:link {
+    color: white;
+    text-decoration: none;
+}
+a:visited{
+    color: white;
+    border: thin solid #7E41FE;
+    /* background-color: #7E41FE; */
+}
+a:visited::after{
+    content: "";
+    border-color:#7E41FE transparent transparent transparent ;
+}
+a:hover{
+    text-shadow: 0 0 3px #8400ff, 0 0 5px #7E41FE;
+}
+
+.top{
+    width: 100%;
+    background-size: cover;
+    background:linear-gradient(180deg, #311C52 0%, rgba(255, 255, 255, 0) 100%) , url(assets/images/displayimage.jpg);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+.bold{
+    text-align: left;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 72px
+}
+.one{
+    position: relative;
+    padding: 5px;
+    border: thin solid #7E41FE;
+    background-color: #7E41FE;
+}
+.one::after{
+    content: "";
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    border-style: solid;
+    border-color:#7E41FE transparent transparent transparent ;
+}
+.artist{
+    width: 70%;
+    height: 20%;
+    position:relative;
+}
+.artist span{
+    width: 30%;
+}
+.txt{
+    position:absolute;
+    left: 110%; 
+    width: 30%;
+    height: auto;
+}
+@media only screen and (max-width:768px){
+    body{
+        font-size: 10px;
+        line-height: 10px;
+        text-align: center;
+    }
+    
+    .header{
+        font-size: 10px;
+        width: 8%;
+        margin: 0% 4% 0% 0% ;
+    }
+    h1 {
+        font-size: 20px;
+        margin: 0% 3% 0% 0% ;
+        width: 15%;
+    }
+    .two{
+        font-size: 10px;
+        
+        width: 15%;
+    }
+    
+    .three{
+        width: 25%;
+    }
+    .txt{
+        font-size: 15px;
+        line-height: 10px;
+        position:absolute;
+        left: 110%; 
+        width: 20%;
+        height: 50%;
+    }
+    .txt b{
+        font-size: 20px;
+        line-height: 15px;
+    }
+
+}

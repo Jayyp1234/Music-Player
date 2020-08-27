@@ -1,0 +1,208 @@
+@font-face {
+    font-family: Open Sans Regular;
+    src: url(../../fonts/OpenSans-Regular.ttf)
+}
+
+@font-face {
+    font-family: Open Sans SemiBold;
+    src: url(../../fonts/OpenSans-SemiBold.ttf)
+}
+
+@font-face {
+    font-family: Open Sans Bold;
+    src: url(../../fonts/OpenSans-Bold.ttf)
+}
+
+/* Sass Decoration to assign color values*/
+:root {
+    --black--: #343a40;
+    --purple--: #7E41FE;
+    --red--: #ff0000;
+    --white--: #FFFFFF;
+    --blue--: #007bff;
+    --deepblue--: #0056b3;
+}
+
+/* Margin and Padding removal*/
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    opacity: 0.9;
+    font-family: "Open Sans Regular";
+}
+
+* {
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+*:hover {
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+nav{
+    height: 50px !important; 
+    position: absolute !important;
+    width: 100% !important;
+    background-color: transparent !important;
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.5) !important;
+}
+nav h3{
+    font-family: "Open Sans Regular" !important;
+}
+nav input[type='text']{
+    background-color:white !important;
+    height: 30px !important;
+    border-radius: 10px !important;
+    width: 350px !important;
+    opacity: 0.4 !important;
+    margin-right: 15px !important;
+    padding-left: 30px !important;
+}
+nav i{
+    color: var(--black--) !important;  
+    margin-right: 4px !important;
+}
+@media all and (max-width: 716px){
+nav input[type='text']{
+    width: 200px !important;
+
+}      
+}
+@media all and (max-width: 500px){
+nav a{
+	font-size: 3.0vw;
+}
+nav input[type='text'] {
+    width: 40vw !important;
+}   
+nav input[type='text']::placeholder {
+    font-size: 3.0vw !important;
+}   
+}
+@media (max-width: 326px){
+nav input[type='text'] {
+    width: 30vw !important;
+}
+nav input[type='text']::placeholder {
+    width: 1.4vw !important;
+}
+}
+header{
+	z-index: -100;
+	height: 570px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	background:linear-gradient(180deg, #311C52 0%, rgba(255, 255, 255, 0) 100%) , url(../images/displayimage.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+section.audio-player{
+	line-height: 18px !important;
+	height: 8vh;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: calc(100%);
+	position: absolute;
+	bottom:0;
+	background-color: black;
+	align-content: center;
+	align-self: center;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	transition: bottom 0.5s ease-in-out;
+}
+.audio-player img{
+	width: 45px !important;
+}
+.audio-player div{
+	display: block;
+    margin-bottom: 0px !important; 
+}
+.play{
+	color: var(--red--);
+	font-size: 90%;
+	background-color: rgba(255, 51, 23 , 0.5);
+	border-radius: 50%;
+	padding: 7px;
+}
+.featured-music-flex{
+	display: flex;
+	width:calc(100% - 15vw - 270px);
+	justify-content: space-around;
+	position: absolute;
+	margin-top: -39px;
+}
+.featured-music-flex-images{
+	display: grid;
+}
+.featured-music-flex-images img{
+	width: 90px;
+	height: 80px;
+}
+.featured-music-flex-images b{
+	font-size: 65%;
+}
+.featured-music-flex-images span{
+	font-size: 65%;
+	color: var(--black--);
+}
+
+.audio-timer{
+	font-size: 50%;
+	display: grid;
+}
+.progress-bar{
+	width: 65vw;
+	height: 7px;
+	background-color: #e8a6ff;
+	border-radius: 4px;
+}
+.progress{
+	height: 7px;
+	display: block;
+	background-color: var(--purple--);
+	width: 0%;
+	border-radius: 4px;
+}
+@media all and (max-width: 880px){
+	.progress-bar{
+		width: 45vw;
+	}
+}
+@media all and (max-width: 780px){
+	.progress-bar{
+		width: 30vw;
+	}
+}
+@media all and (max-width: 620px){
+	.audio-controls i , .audio-controls2 i{
+		margin-left: 5px;
+	}
+}
+@media all and (max-width: 530px){
+	.audio-controls i , .audio-controls2 i{
+		margin-left: 0px;
+	}
+}
