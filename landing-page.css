@@ -79,9 +79,10 @@ a:hover{
 }
 .bold{
     text-align: left;
+    margin-top:20px;
     font-weight: bold;
     font-size: 4vw;
-    line-height: 72px
+    line-height: 72px;
 }
 .one{
     position: relative;
